@@ -9,38 +9,46 @@ import kr.or.yi.mybatis_c3p0_teacher.jdbc.MyBatisSqlSessionFactory;
 
 public class TitleDaoImpl implements TitleDao {
 	private static final String namespace = "kr.or.yi.mybatis_c3p0_teacher.dao.TitleDao";
-	
+
 	@Override
 	public List<Title> selectTitleByAll() {
-		// TODO Auto-generated method stub
-		return null;
+		try (SqlSession sqlSession = MyBatisSqlSessionFactory.openSession()) {
+			return sqlSession.selectList(namespace + ".selectTitleByAll");
+		}
 	}
 
 	@Override
-	public Title selectTitlebyCode(Title title) {
-		// TODO Auto-generated method stub
-		return null;
+	public Title selectTitleByCode(Title title) {
+		try (SqlSession sqlSession = MyBatisSqlSessionFactory.openSession()) {
+			return sqlSession.selectOne(namespace + ".selectTitleByCode", title);
+		}
 	}
 
 	@Override
 	public int insertTitle(Title title) {
-		try(SqlSession sqlSession = MyBatisSqlSessionFactory.openSession()){
-            int res = sqlSession.insert(namespace + ".insertTitle", title);
-            sqlSession.commit();
-            return res;
-        }
+		try (SqlSession sqlSession = MyBatisSqlSessionFactory.openSession()) {
+			int res = sqlSession.insert(namespace + ".insertTitle", title);
+			sqlSession.commit();
+			return res;
+		}
 	}
 
 	@Override
 	public int deleteTitle(Title title) {
-		// TODO Auto-generated method stub
-		return 0;
+		try (SqlSession sqlSession = MyBatisSqlSessionFactory.openSession()) {
+			int res = sqlSession.delete(namespace + ".deleteTitle", title);
+			sqlSession.commit();
+			return res;
+		}
 	}
 
 	@Override
 	public int updateTitle(Title title) {
-		// TODO Auto-generated method stub
-		return 0;
+		try (SqlSession sqlSession = MyBatisSqlSessionFactory.openSession()) {
+			int res = sqlSession.update(namespace + ".updateTitle", title);
+			sqlSession.commit();
+			return res;
+		}
 	}
 
 }

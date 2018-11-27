@@ -1,7 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="kr.or.yi.mybatis_c3p0_teacher.dao.TitleDao">
+
 	<insert id="insertTitle" parameterType="Title">
-		insert into title(tcode, tname) values({#code},{#name});
+		insert into title (code, name) values(#{code}, #{name})
 	</insert>
+	
+	<select id="selectTitleByAll" resultType="Title">
+		select code, name from title
+	</select>
+	
+	<select id="selectTitleByCode" parameterType="Title" resultType="Title">
+		select code, name from title where code=#{code}
+	</select>
+	
+	<delete id="deleteTitle" parameterType="Title">
+		delete from title where code=#{code}
+	</delete>
+	
+	<update id="updateTitle" parameterType="Title">
+		update title set name=#{name} where code=#{code}
+	</update>
 </mapper>

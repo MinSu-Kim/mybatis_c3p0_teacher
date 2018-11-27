@@ -6,7 +6,7 @@ import kr.or.yi.mybatis_c3p0_teacher.dto.Title;
 
 public interface TitleDao {
 	List<Title> selectTitleByAll();
-	Title selectTitlebyCode(Title title);
+	Title selectTitleByCode(Title title);
 	int insertTitle(Title title);
 	int deleteTitle(Title title);
 	int updateTitle(Title title);
