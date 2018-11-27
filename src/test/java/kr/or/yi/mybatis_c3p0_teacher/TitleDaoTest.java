@@ -2,12 +2,8 @@ package kr.or.yi.mybatis_c3p0_teacher;
 
 import java.util.List;
 
-import org.apache.ibatis.logging.Log;
-import org.apache.ibatis.logging.LogFactory;
-import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -18,8 +14,7 @@ import kr.or.yi.mybatis_c3p0_teacher.dao.TitleDaoImpl;
 import kr.or.yi.mybatis_c3p0_teacher.dto.Title;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING)
-public class TitleDaoTest {
-	private static final Log log = LogFactory.getLog(TitleDaoTest.class);
+public class TitleDaoTest extends AbstractTest{
 
 	private static TitleDao titleDao; 
 	
@@ -33,14 +28,6 @@ public class TitleDaoTest {
 		titleDao = null;
 	}
 
-	@Before
-	public void setUp() throws Exception {}
-	
-	@After
-	public void tearDown() throws Exception {
-		System.out.println();
-	}
-	
 	@Test
 	public void test01insertTitle() {
 		log.debug("test01insertTitle()");
