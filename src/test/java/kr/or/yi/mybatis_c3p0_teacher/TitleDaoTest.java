@@ -2,7 +2,6 @@ package kr.or.yi.mybatis_c3p0_teacher;
 
 import java.util.List;
 
-import org.apache.ibatis.exceptions.PersistenceException;
 import org.apache.ibatis.logging.Log;
 import org.apache.ibatis.logging.LogFactory;
 import org.junit.After;
@@ -42,7 +41,7 @@ public class TitleDaoTest {
 		System.out.println();
 	}
 	
-	@Test/*(expected=PersistenceException.class)*/
+	@Test
 	public void test01insertTitle() {
 		log.debug("test01insertTitle()");
 		Title title = new Title();
