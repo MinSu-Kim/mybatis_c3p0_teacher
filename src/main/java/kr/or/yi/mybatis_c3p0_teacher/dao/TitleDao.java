@@ -4,7 +4,7 @@ import java.util.List;
 
 import kr.or.yi.mybatis_c3p0_teacher.dto.Title;
 
-public interface TtileDao {
+public interface TitleDao {
 	List<Title> selectTitleByAll();
 	Title selectTitlebyCode(Title title);
 	int insertTitle(Title title);

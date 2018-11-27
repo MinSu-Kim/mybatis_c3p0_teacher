@@ -1,0 +1,29 @@
+use mybatis_study;
+
+CREATE TABLE department (
+  dcode int(11) NOT NULL AUTO_INCREMENT,
+  dname char(10) NOT NULL,
+  floor int(11) ,
+  PRIMARY KEY (dcode)
+);
+
+CREATE TABLE title (
+  tcode int(11) NOT NULL,
+  tname varchar(10),
+  PRIMARY KEY (tcode)
+);
+
+CREATE TABLE employee (
+  eno int(11) NOT NULL,
+  ename varchar(20) NOT NULL,
+  salary int(11),
+  dno int(11),
+  gender tinyint(1),
+  joindate date,
+  title int(11),
+  PRIMARY KEY (eno),
+  KEY fk_employee_department_dno (dno),
+  KEY FK_title_TO_employee (title),
+  CONSTRAINT FK_title_TO_employee FOREIGN KEY (title) REFERENCES title (tcode),
+  CONSTRAINT fk_employee_department_dno FOREIGN KEY (dno) REFERENCES department (dcode)
+);
