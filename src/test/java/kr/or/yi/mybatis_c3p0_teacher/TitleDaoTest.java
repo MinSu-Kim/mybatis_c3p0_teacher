@@ -45,6 +45,7 @@ public class TitleDaoTest extends AbstractTest{
 		List<Title> titleList = titleDao.selectTitleByAll();
 		Assert.assertNotNull(titleList);
 	}
+	
 
 	@Test
 	public void test03selectTitlebyCode() {
@@ -56,6 +57,7 @@ public class TitleDaoTest extends AbstractTest{
 		Assert.assertNotNull(searchTitle);
 	}
 	
+		
 	@Test
 	public void test04updateTitle() {
 		log.debug("test04updateTitle()");
