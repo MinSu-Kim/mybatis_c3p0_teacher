@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="mappers.TitleMapper">
+<mapper namespace="kr.or.yi.mybatis_c3p0_teacher.dao.TitleDao">
 
 	<insert id="insertTitle" parameterType="Title">
 		insert into title (code, name) values(#{code}, #{name})
@@ -14,8 +14,8 @@
 		select code, name from title where code=#{code}
 	</select>
 	
-	<delete id="deleteTitle" parameterType="Title">
-		delete from title where code=#{code}
+	<delete id="deleteTitle" >
+		delete from title where code=#{param1}
 	</delete>
 	
 	<update id="updateTitle" parameterType="Title">

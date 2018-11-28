@@ -69,9 +69,7 @@ public class TitleDaoTest extends AbstractTest{
 	@Test
 	public void test05deleteTitle() {
 		log.debug("test05deleteTitle()");
-		Title title = new Title();
-		title.setCode(5);
-		int res = titleDao.deleteTitle(title);
+		int res = titleDao.deleteTitle(5);
 		Assert.assertEquals(1, res);
 	}
 }
