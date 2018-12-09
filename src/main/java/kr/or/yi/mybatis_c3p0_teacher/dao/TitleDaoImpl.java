@@ -11,12 +11,12 @@ public class TitleDaoImpl extends ExecuteDao implements TitleDao {
 
 	@Override
 	public List<Title> selectTitleByAll() {
-		return processQueryItem((SqlSession sqlSession)->sqlSession.selectList(namespace + ".selectTitleByAll"));
+		return processQueryResult((SqlSession sqlSession)->sqlSession.selectList(namespace + ".selectTitleByAll"));
 	}
 
 	@Override
 	public Title selectTitleByCode(Title title) {
-		return processQueryItem((SqlSession sqlSession)->sqlSession.selectOne(namespace + ".selectTitleByCode", title));
+		return processQueryResult((SqlSession sqlSession)->sqlSession.selectOne(namespace + ".selectTitleByCode", title));
 	}
 
 	@Override

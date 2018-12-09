@@ -6,7 +6,7 @@ import kr.or.yi.mybatis_c3p0_teacher.jdbc.MyBatisSqlSessionFactory;
 
 public class ExecuteDao {
 
-    protected <T> T processQueryItem(ExecuteItem<T> p) {
+    protected <T> T processQueryResult(ExecuteItem<T> p) {
         try(SqlSession sqlSession = MyBatisSqlSessionFactory.openSession()){
             return p.exectueQuery(sqlSession);
         }
